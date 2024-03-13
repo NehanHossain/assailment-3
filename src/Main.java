@@ -5,11 +5,11 @@ Mar 7,2024
 produce: a program that outputs
  */
 
-//imports
+// imports
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//The main class
+// the main interface
 public class Main {
     static ArrayList<Maintenance> maintenanceList = new ArrayList<>();
     static ArrayList<Car> carList = new ArrayList<>();
@@ -19,23 +19,23 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int your_choice;
         do {
-            System.out.println("Add Maintenance");
-            System.out.println("Show Maintenance by Invoice");
-            System.out.println("Show all maintenance");
-            System.out.println("Delete Maintenance");
-            System.out.println("Exit");
+            System.out.println("1. Add Maintenance");
+            System.out.println("2. Show Maintenance by Invoice");
+            System.out.println("3. Show all maintenance");
+            System.out.println("4. Delete Maintenance");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             your_choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
             switch (your_choice) {
                 case 1:
-                    MaintenanceTracker.addMaintenance(scanner);
+                    MaintenanceTracker.addMaintenance(scanner, maintenanceList, carList, serviceList);
                     break;
                 case 2:
                     MaintenanceTracker.showMaintenanceByInvoice(scanner);
                     break;
                 case 3:
-                    MaintenanceTracker.showAllMaintenance();
+                    MaintenanceTracker.showAllMaintenance(maintenanceList);
                     break;
                 case 4:
                     MaintenanceTracker.deleteMaintenance(scanner);
@@ -46,7 +46,7 @@ public class Main {
                 default:
                     System.out.println("Invalid choice");
             }
-        } while (your_choice != 6);
+        } while (your_choice != 5);
         scanner.close();
     }
 }
