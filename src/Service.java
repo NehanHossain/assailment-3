@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 public class Service {
 
+    static ArrayList<Service> services = new ArrayList<>();
+
     // Constants
     final double ZEROPOINTZERO = 0.0;
     static final double ZEROPOINTZEROZERO = 0.00;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Car {
 
-    public static ArrayList<Car> cars;
+    public static ArrayList<Car> cars = new ArrayList<>();
     private static int autoVin = 1;
 
     private int vin;
@@ -134,6 +134,4 @@ public class Car {
         }
         return "Car not found!";
     }
-
-
 }
