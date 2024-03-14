@@ -116,17 +116,6 @@ public class Car {
         return null;
     }
 
-    public static String toTable(ArrayList<Car> cars) {
-        StringBuilder table = new StringBuilder();
-        table.append("VIN | COLOR    | YEAR | Make | Model | Owner\n");
-        table.append("----|----------|------|------|-------|---------------------\n");
-        for (Car car : cars) {
-            table.append(String.format("%-4d| %-9s| %-5d| %-5s| %-6s| %-20s\n",
-                    car.getVin(), car.getColor(), car.getYear(), car.getMake(), car.getModel(), car.getOwner()));
-        }
-        return table.toString();
-    }
-
     public String toString(int vin) {
         Car car = findCarByVIN(vin, cars);
         if (car != null) {

@@ -11,7 +11,7 @@ import java.util.List;
 
 //Maintenance
 public class Maintenance {
-    // Fields
+
     private Car car;
     private Service service;
     private double price;
@@ -29,7 +29,7 @@ public class Maintenance {
         this.invoiceId = invoiceId;
     }
 
-    // Method to find maintenance entry by invoice ID
+    //  maintenance entry by invoice ID
     public static Maintenance findMaintenanceByInvoice(int invoiceId, List<Maintenance> maintenanceList) {
         for (Maintenance maintenance : maintenanceList) {
             if (maintenance.getInvoiceId() == invoiceId) {
@@ -54,7 +54,7 @@ public class Maintenance {
                 "Notes: " + notes;
     }
 
-    // Method to convert maintenance details to a formatted table
+    // convert maintenance details to a formatted table
     public static String toTable(List<Maintenance> maintenanceList) {
         StringBuilder table = new StringBuilder();
         table.append("Invoice ID | Car | Service | Price | Date | Notes\n");
